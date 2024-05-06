@@ -1,10 +1,36 @@
 #include "Reader.h"
+#include <iostream>
+#include <string>
+#include "Trie.h"
+#include "HistoryOrganizer.h"
+#include "TextProcessor.h"
+using namespace std;
 
 Reader::Reader() {
-	this->paragraphPath = "default.txt";
+	//this->paragraphPath = "default.txt";
 }
 Reader::Reader(std::string& paragraphPath){
+	paragraphPath += ".txt";
 	this->paragraphPath = paragraphPath;
+}
+
+void Reader::uplaod() {
+	char in = 'c';
+	HistoryOrganizer history;
+	TextProcessor txt;
+	do {
+		in = 'c';
+		string path; cin >> path;
+		//path += ".txt";
+		Reader file(path);
+		string paragraph = file.read();
+		txt.WordSplitter(paragraph);
+		history.settervec(path,paragraph,txt.words);
+		cout << "do you want to read file\n";
+		cin >> in;
+		history.counter++;
+
+	} while (in == 'y');
 }
 
 std::string Reader::read() {
@@ -20,6 +46,7 @@ std::string Reader::read() {
 	catch (const std::exception& e) {
 		std::cout << e.what();
 	}
+//	cout << paragraph;
 	return paragraph;
 }
 

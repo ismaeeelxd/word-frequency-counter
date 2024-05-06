@@ -3,9 +3,13 @@ using namespace std;
 
 
 
+
 TextProcessor::TextProcessor(string paragraph) {
     WordSplitter(paragraph);
     sortedfreq();
+}
+TextProcessor::TextProcessor() {
+
 }
 
 bool TextProcessor:: searchWordFrequency(string word, map<string, int> wordFrequency)
@@ -116,18 +120,24 @@ bool TextProcessor::contain(string s) {
 
 string TextProcessor::Tolowercase(string sentence) {
     for (int i = 0; i < sentence.size(); ++i) {
+        if (sentence[i] == '.'|| sentence[i] == ',' || sentence[i] == '-' || sentence[i] == ':' || sentence[i] == ';' || sentence[i] == '?' || sentence[i] == '!' || sentence[i] == '_'  )
+            sentence.erase(i);
+        else
         sentence[i] = tolower(sentence[i]);
     }
     return sentence;
 }
 
+
 void TextProcessor::WordSplitter(string paragraph) {
+    HistoryOrganizer freq;
     istringstream iss(paragraph);
     map<string, int>temp;
     string word;
     while (iss >> word) {
         word = Tolowercase(word);
         temp[word]++;
+        freq.setmap(word);
         // cout << word << "  " << temp[word] << endl;
     }
     words = temp;

@@ -8,6 +8,7 @@
 #include <vector>
 #include <algorithm>
 #include <sstream>
+#include "HistoryOrganizer.h"
 using namespace std;
 class TextProcessor
 {
@@ -16,6 +17,7 @@ class TextProcessor
 
 public:
 	std::map<std::string, int> words;
+	TextProcessor();
 	TextProcessor(string paragraph);
 	void WordSplitter(std::string);
 	bool searchWordFrequency(std::string word, std::map<std::string, int> wordFrequency);

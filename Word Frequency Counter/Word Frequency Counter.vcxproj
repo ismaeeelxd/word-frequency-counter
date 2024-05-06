@@ -127,9 +127,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="DataOfParagraph.h" />
     <ClInclude Include="HistoryOrganizer.h" />
     <ClInclude Include="Reader.h" />
     <ClInclude Include="TextProcessor.h" />
+    <ClInclude Include="Trie.h" />
     <ClInclude Include="Visualizer.h" />
     <ClInclude Include="WordFilter.h" />
     <ClInclude Include="WordSearcher.h" />
@@ -139,6 +141,7 @@
     <ClCompile Include="Reader.cpp" />
     <ClCompile Include="src.cpp" />
     <ClCompile Include="TextProcessor.cpp" />
+    <ClCompile Include="Trie.cpp" />
     <ClCompile Include="Visualizer.cpp" />
     <ClCompile Include="WordFilter.cpp" />
     <ClCompile Include="WordSearcher.cpp" />
