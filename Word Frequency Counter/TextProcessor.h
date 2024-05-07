@@ -27,6 +27,8 @@ public:
 	bool contain(string s);
 	string Tolowercase(string sentence);
 	void Display();
+	void searchauto();
+	void searchcorrect(string word);
 
 
 
