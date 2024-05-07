@@ -1,4 +1,4 @@
-﻿#include "TextProcessor.h"
+#include "TextProcessor.h"
 using namespace std;
 
 
@@ -149,4 +149,61 @@ void TextProcessor::Display() {
     }
 
 }
+
+void TextProcessor::searchauto() {
+    cout << "Enter the word (Press  to exit):\n";
+
+    string str;
+    char s;
+    while (true) {
+        cout << "Search Query: " << str;
+        s = getchar();
+
+        if (s == '\r')
+            break;
+
+        str += s;
+
+        for (auto it : words) {
+            if (it.first.substr(0, str.size()) == Tolowercase(str)) {
+                cout << it.first << " " << it.second << endl;
+            }
+        }
+        /* system("CLS");*/
+         //cout << s << endl;
+    }
+}
+
+void TextProcessor::searchcorrect(string word)
+{
+    map<string, int>mm;
+    int size = word.size();
+    int diff = 0;
+    for (auto nn : words)
+    {
+        diff = 0;
+        if (nn.first.size() == size)
+        {
+            for (int i = 0; i < size; i++)
+            {
+                if (word[i] != nn.first[i] && diff < 3)
+                {
+                    diff++;
+                }
+                else
+                {
+                    break;
+                }
+            }
+            if (diff < 3)
+                mm.emplace(nn);
+
+        }
+    }
+
+    for (auto v : mm)
+    {
+
+        cout << v.first << " " << v.second << endl;
+    }
 
