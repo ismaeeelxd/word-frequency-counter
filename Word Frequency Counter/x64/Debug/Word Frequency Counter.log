@@ -1,7 +1,0 @@
-﻿  TextProcessor.cpp
-C:\Users\aa\source\repos\word-frequency-counter\Word Frequency Counter\Reader.h(5,9): warning C4067: unexpected tokens following preprocessor directive - expected a newline
-  (compiling source file 'TextProcessor.cpp')
-  
-C:\Users\aa\source\repos\word-frequency-counter\Word Frequency Counter\TextProcessor.cpp(54,1): warning C4715: 'TextProcessor::rankkingbyitChar': not all control paths return a value
-C:\Users\aa\source\repos\word-frequency-counter\Word Frequency Counter\TextProcessor.cpp(112,1): warning C4715: 'TextProcessor::rankkingbyfreq': not all control paths return a value
-  Word Frequency Counter.vcxproj -> C:\Users\aa\source\repos\word-frequency-counter\x64\Debug\Word Frequency Counter.exe
